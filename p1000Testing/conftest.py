@@ -14,6 +14,7 @@ def pytest_addoption(parser):
 
 @pytest.fixture(scope="class")  # FLAG = run setup_teardown per class (and not on each function)
 def setup_teardown(request):
+    # driver = None
     global driver
     print("$ SETUP $")
     browser_name = request.config.getoption("browser_name")  # Gets value from cmd (browser's name)
