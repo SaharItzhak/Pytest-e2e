@@ -1,7 +1,7 @@
 
 # This file is special Pytest (don't change the name of file)
 # Here we put the fixtures (setup/teardown/data) so it will be global to program
-from Utilities.imports import MAX_WAIT, URL, data
+from Utilities.imports import MAX_WAIT, BASE_URL, DATA
 from selenium import webdriver
 import pytest
 
@@ -16,7 +16,7 @@ def pytest_addoption(parser):
 def setup_teardown(request):
     driver = None
     # global driver
-    print("$ SETUP $")
+    print("$ SETUP $ - setting up chrome browser")
     browser_name = request.config.getoption("browser_name")  # Gets value from cmd (browser's name)
     if browser_name == "chrome":
         driver = webdriver.Chrome("C:/Users/Sahar.itzhak/Downloads/Chromedriver/chromedriver")
@@ -29,11 +29,11 @@ def setup_teardown(request):
         print("Browser not supported")
         return
     driver.implicitly_wait(MAX_WAIT)
-    driver.get(URL)
+    driver.get(BASE_URL)
     request.cls.driver = driver  # Binds the driver to the class (Tests class)
     yield
     driver.quit()
-    print("$ TEARDOWN $")
+    print("$ TEARDOWN $ - driver closed")
 
 
 # @pytest.fixture(params=["Chrome", "Firefox", "Internet Explorer"])
@@ -67,6 +67,6 @@ def setup_teardown(request):
 
 
 # Parameters to send to test_e2e (instead of hard-code values)
-@pytest.fixture(params=data)
+@pytest.fixture(params=DATA)
 def getParams(request):
     return request.param

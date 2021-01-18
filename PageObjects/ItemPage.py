@@ -10,13 +10,14 @@ from selenium.webdriver.common.by import By
 class ItemPage(BaseClass, Logger):
 
     buyNowBtn = (By.ID, "MainContent_SaleDetailsData_Auctions_BuyNowBtn")
+    linkText = "קניה מהירה"
 
     def __init__(self, driver):
         self.driver = driver
 
-    def goToCheckout(self, linkText):
+    def goToCheckout(self):
         try:
-            self.verifyLinkPresence(linkText)
+            self.verifyLinkPresence(ItemPage.linkText)
         except NoSuchElementException:
             logger = self.get_logger()
             logger.info("$ Item is out of stock $")

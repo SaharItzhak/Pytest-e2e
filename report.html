@@ -243,7 +243,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
 }
 </script>
     <h1>report.html</h1>
-    <p>Report generated on 04-Jan-2021 at 22:09:00 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.1.1</p>
+    <p>Report generated on 14-Jan-2021 at 20:33:29 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.1.1</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
@@ -262,8 +262,8 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <td>Python</td>
         <td>3.9.1</td></tr></table>
     <h2>Summary</h2>
-    <p>1 tests ran in 32.19 seconds. </p>
-    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">1 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <p>5 tests ran in 22.05 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">4 passed</span>, <input checked="true" class="filter" data-test-result="skipped" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">2 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">1 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
       <thead id="results-table-head">
@@ -274,18 +274,79 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
           <th class="sortable links" col="links">Links</th></tr>
         <tr hidden="true" id="not-found-message">
           <th colspan="4">No results found. Try to check the filters</th></tr></thead>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">p1000Testing/test_e2e.py::Tests::test_second</td>
+          <td class="col-duration">0.02</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">self = &lt;p1000Testing.test_e2e.Tests object at 0x000001D209F783A0&gt;<br/><br/>    def test_second(self):<br/>        logger = self.get_logger()<br/>        logger.info(inspect.stack()[0][3] + &quot; PASSED&quot;), print(inspect.stack()[0][3], &quot;PASSED!&quot;)<br/>&gt;       assert 1 == 2<br/><span class="error">E       assert 1 == 2</span><br/><br/>p1000Testing\test_e2e.py:50: AssertionError<br/> ------------------------------Captured stdout call------------------------------ <br/>test_second PASSED!
+<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     p1000Testing.Loggertest_second:test_e2e.py:49 test_second PASSED<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">p1000Testing/test_e2e.py::Tests::test_third</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">(&#x27;C:\\Users\\Sahar.itzhak\\PycharmProjects\\p1000 e2e testing\\p1000Testing\\test_e2e.py&#x27;, 52, &quot;Skipped: Because don&#x27;t need it at the moment&quot;)<br/></div></td></tr></tbody>
+      <tbody class="skipped results-table-row">
+        <tr>
+          <td class="col-result">Skipped</td>
+          <td class="col-name">p1000Testing/test_e2e.py::Tests::test_forth</td>
+          <td class="col-duration">0.00</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">(&#x27;C:\\Users\\Sahar.itzhak\\PycharmProjects\\p1000 e2e testing\\p1000Testing\\test_e2e.py&#x27;, 57, &#x27;Skipped: Python version is greater than 3.5&#x27;)<br/></div></td></tr></tbody>
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">p1000Testing/test_e2e.py::Tests::test_first[getParams0]</td>
-          <td class="col-duration">31.98</td>
+          <td class="col-duration">19.57</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
             <div class="log"> -----------------------------Captured stdout setup------------------------------ <br/>$ SETUP $
-<br/> ------------------------------Captured stdout call------------------------------ <br/>3750
-7163
+<br/> ------------------------------Captured stdout call------------------------------ <br/>Logger created
+Searching for: רחפן
+3750
+Choosing cheapest item that matches results
+Navigating to checkout page
 Minimum price is: 3750
-**********TEST FIRST**********
-<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     p1000Testing.Loggertest_first:test_e2e.py:38 **********TEST SECOND**********<br/> ----------------------------Captured stdout teardown---------------------------- <br/>$ TEARDOWN $
+test_first PASSED!
+<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     p1000Testing.Loggertest_first:test_e2e.py:45 test_first PASSED<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">p1000Testing/test_e2e.py::Tests::test_sanity_1</td>
+          <td class="col-duration">0.01</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>test_sanity_1 PASSED!
+<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     p1000Testing.Loggertest_sanity_1:test_e2e.py:66 test_sanity_1 PASSED<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">p1000Testing/test_e2e.py::Tests::test_sanity_2</td>
+          <td class="col-duration">0.03</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>test_sanity_2 PASSED!
+<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     p1000Testing.Loggertest_sanity_2:test_e2e.py:73 test_sanity_2 PASSED<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">p1000Testing/test_e2e.py::Tests::test_sanity_3</td>
+          <td class="col-duration">2.22</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>test_sanity_3 PASSED!
+<br/> -------------------------------Captured log call-------------------------------- <br/>INFO     p1000Testing.Loggertest_sanity_3:test_e2e.py:78 test_sanity_3 PASSED<br/> ----------------------------Captured stdout teardown---------------------------- <br/>$ TEARDOWN $
 <br/></div></td></tr></tbody></table></body></html>
